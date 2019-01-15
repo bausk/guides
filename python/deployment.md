@@ -8,9 +8,15 @@ This is what I've discovered so far.
 Lambdas are supposed to live around 5 minutes so they don't quite fit into a Python Dashboard-style application
 where user actions are piped back to backend via websockets. There are solutions to this but the overall process in cumbersome.
 
-Reference links of interest:
+#### Reference links of interest:
 
 - TBD
+
+#### Gotchas:
+
+- Add prefix to be able to serve static files to the corresponding environments.
+
+- Expose `app.server` as variable and point Zappa to it, otherwise the Dash app won't deploy.
 
 ### AWS Elastic Beanstalk
 
