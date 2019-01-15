@@ -10,3 +10,11 @@ where user actions are piped back to backend via websockets. There are solutions
 
 Reference links of interest:
 
+- TBD
+
+### AWS Elastic Beanstalk
+
+Resources:
+
+[As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
+
