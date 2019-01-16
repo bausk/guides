@@ -24,3 +24,6 @@ Resources:
 
 [As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
 
+# Other
+
+https://github.com/anaibol/awesome-serverless
