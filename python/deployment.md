@@ -1,4 +1,4 @@
-# Python Deployment
+# Python Deployment to Serverless Providers
 
 I wanted to try a serverless, modern Python deployment pipeline. As a reference, an example Dash by Plotly project was used.
 This is what I've discovered so far.
