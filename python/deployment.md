@@ -5,7 +5,9 @@ This is what I've discovered so far.
 
 ### Source Application
 
-https://dash.plot.ly/sharing-data-between-callbacks
+[Simple callback, working on Lambda:](https://dash.plot.ly/sharing-data-between-callbacks)
+
+[Grand scheme app](http://jmdaignan.com/2018/02/26/metricsdash/)
 
 ### AWS Lambda is not a Good Choice For Websocket-Based Stuff
 
