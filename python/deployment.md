@@ -3,6 +3,10 @@
 I wanted to try a serverless, modern Python deployment pipeline. As a reference, an example Dash by Plotly project was used.
 This is what I've discovered so far.
 
+### Source Application
+
+https://dash.plot.ly/sharing-data-between-callbacks
+
 ### AWS Lambda is not a Good Choice For Websocket-Based Stuff
 
 Lambdas are supposed to live around 5 minutes so they don't quite fit into a Python Dashboard-style application
@@ -21,6 +25,8 @@ where user actions are piped back to backend via websockets. There are solutions
 ### AWS Elastic Beanstalk
 
 Resources:
+
+[Deploying Dash to AWS EBS](https://www.phillipsj.net/posts/deploying-dash-to-elastic-beanstalk)
 
 [As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
 
