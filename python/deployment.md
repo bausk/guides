@@ -3,6 +3,19 @@
 I wanted to try a serverless, modern Python deployment pipeline. As a reference, an example Dash by Plotly project was used.
 This is what I've discovered so far.
 
+### Setting Up the Project
+
+Install pipenv. To make it maximally robust, do it in the following fashion to keep the virtual environment recognizable by tools like `zappa`:
+```export PIPENV_VENV_IN_PROJECT=true
+pip install pipenv
+pipenv install
+export VIRTUAL_ENV=.venv/
+```
+
+Now you can install development dependencies, like CLI tools for Amazon Web Services, `eb` and `aws`.
+
+`aws elasticbeanstalk list-available-solution-stacks`
+
 ### Source Application
 
 [Simple callback, working on Lambda:](https://dash.plot.ly/sharing-data-between-callbacks)
@@ -31,6 +44,11 @@ Resources:
 [Deploying Dash to AWS EBS](https://www.phillipsj.net/posts/deploying-dash-to-elastic-beanstalk)
 
 [As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
+
+#### Gotchas:
+
+https://docs.aws.amazon.com/en_us/elasticloadbalancing/latest/userguide/elb-api-permissions.html
+
 
 # Other
 
