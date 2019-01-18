@@ -49,6 +49,7 @@ Resources:
 
 https://docs.aws.amazon.com/en_us/elasticloadbalancing/latest/userguide/elb-api-permissions.html
 
+https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perform-iamcreateservicelinkedrole
 
 # Other
 
