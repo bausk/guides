@@ -51,6 +51,10 @@ https://docs.aws.amazon.com/en_us/elasticloadbalancing/latest/userguide/elb-api-
 
 https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perform-iamcreateservicelinkedrole
 
+### AWS Orchestration
+
+Using custom domain (Route53) with AWS Lambda is a bit tricky and [requires configuring CloudFront](https://medium.com/99xtechnology/full-stack-serverless-web-apps-with-aws-189d87da024a). Django has a [walkthrough](https://edgarroman.github.io/zappa-django-guide/walk_static/) dedicated to this topic.
+
 # Other
 
 https://github.com/anaibol/awesome-serverless
