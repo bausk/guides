@@ -5,7 +5,7 @@ This is what I've discovered so far.
 
 ### Setting Up the Project
 
-Install pipenv. To make it maximally robust, do it in the following fashion to keep the virtual environment recognizable by tools like `zappa`:
+Install pipenv. To make it maximally robust, do it in [the following fashion](https://github.com/Miserlou/Zappa/issues/1443) to keep the virtual environment recognizable by tools like `zappa`:
 ```
 export PIPENV_VENV_IN_PROJECT=true
 pip install pipenv
