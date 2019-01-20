@@ -31,8 +31,13 @@ gcloud services list
 gcloud services enable cloudapis.googleapis.com
 ```
 
+Add permissions to your service account by assigning an Editor role:
 
-### Further Reading
+```
+gcloud projects add-iam-policy-binding PROJECTNAME --member serviceAccount:ACCOUNTEMAIL --role roles/editor
+```
+
+### Sources and Further Reading
 
 https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html
 
