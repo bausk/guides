@@ -6,7 +6,7 @@ YMMV: This repo is not production quality. It's basically a brain dump to pick o
 
 # Contents
 
-[Python Deployment](python/deployment.md)
+[Starting and Deploying a Python Project](python/01_start_and_deployment.md)
 
 [Consuming Data for Production in Python Apps](python/consuming_data.md)
 
