@@ -8,7 +8,7 @@
 
 ##### 2. Install [Google Cloud SDK](https://cloud.google.com/sdk/docs/).
 
-##### 3. Create Google IAM service account using `gcloud` command tool.
+##### 3. Create credentials using a Google IAM service account and the `gcloud` command tool.
 
 List your projects:
 
