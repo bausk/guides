@@ -8,6 +8,32 @@
 
 ##### 2. Install [Google Cloud SDK](https://cloud.google.com/sdk/docs/).
 
+##### 3. Create Google IAM service account using `gcloud` command tool.
+
+List your projects:
+
+```
+gcloud projects list
+```
+
+Create new project if you don't have one, and add a service account to it:
+
+```
+gcloud projects create PROJECTNAME
+gcloud config set project PROJECTNAME
+gcloud iam service-accounts create ACCOUNTNAME --display-name DISPLAYNAME
+```
+
+Enable Google Drive service for the project:
+
+```
+gcloud services list
+gcloud services enable cloudapis.googleapis.com
+```
+
+
+### Further Reading
+
 https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html
 
 ## Considerations for Production
