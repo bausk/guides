@@ -38,8 +38,18 @@ gcloud projects add-iam-policy-binding PROJECTNAME --member serviceAccount:ACCOU
 gcloud iam service-accounts keys create --iam-account ACCOUNTEMAIL googlekey.json
 ```
 
+Now you can authenticate `gspread` and `oauth2` to access a document that's exposed to anyone with the link or to the specific user with email `ACCOUNTEMAIL`. In the sample app, we do it the following way.
+
+For development, `googlekey.json` 
+
+```
+
+```
+
 ### Sources and Further Reading
 
 https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html
+
+http://jmdaignan.com/2018/02/26/metricsdash/
 
 ## Considerations for Production
