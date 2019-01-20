@@ -31,10 +31,11 @@ gcloud services list
 gcloud services enable cloudapis.googleapis.com
 ```
 
-Add permissions to your service account by assigning an Editor role:
+Add permissions to your service account by assigning an Editor role, and generate an access key to a local credentials file, here named `googlekey.json`:
 
 ```
 gcloud projects add-iam-policy-binding PROJECTNAME --member serviceAccount:ACCOUNTEMAIL --role roles/editor
+gcloud iam service-accounts keys create --iam-account ACCOUNTEMAIL googlekey.json
 ```
 
 ### Sources and Further Reading
