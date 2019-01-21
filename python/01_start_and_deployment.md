@@ -17,7 +17,7 @@ Now you can install development dependencies, like CLI tools for Amazon Web Serv
 
 ### Setting Up a Cloud Provider
 
-We're going to use several Amazon CLI tools for deployments. Use the [Setting Up Providers](01a_providers.md) guide.
+We're going to use several Amazon CLI tools for deployments. Use the [Setting Up Providers](../providers.md) guide.
 
 `aws elasticbeanstalk list-available-solution-stacks`
 
