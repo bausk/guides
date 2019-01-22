@@ -122,8 +122,8 @@ After you're done downloading credentials.csv, copy key and secret to `~/.env/cr
 
 ```
 [profile eb-cli]
-aws_access_key_id = AKIAJ6P5JIKQOV7DINYA
-aws_secret_access_key = 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
+aws_access_key_id = KEY
+aws_secret_access_key = SECRET
 
 [default]
 region = us-east-1
