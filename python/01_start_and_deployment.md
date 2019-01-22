@@ -19,22 +19,35 @@ Now you can install development dependencies, like CLI tools for Amazon Web Serv
 
 We're going to use several Amazon CLI tools for deployments. Use the [Setting Up Providers](../providers.md) guide.
 
-`aws elasticbeanstalk list-available-solution-stacks`
+After you're finished setting up Amazon IAM and setting up the project, you're going to have `eb` and `zappa` CLI commands ready to use.
 
-### Source Application
+### AWS Elastic Beanstalk
 
-[Simple callback, working on Lambda:](https://dash.plot.ly/sharing-data-between-callbacks)
+This initializes a new Python 3.6 app in your folder, creates a `development` environment and deploys your app with entrypoint defined in `.ebextensions` of the sample repo, and opens the site:
 
-[Grand scheme app](http://jmdaignan.com/2018/02/26/metricsdash/)
+```
+eb init -p python-3.6 APPNAME --region eu-west-1
+eb create development
+eb open
+```
 
-### AWS Lambda is not a Good Choice For Websocket-Based Stuff
+
+#### Gotchas:
+
+https://docs.aws.amazon.com/en_us/elasticloadbalancing/latest/userguide/elb-api-permissions.html
+
+https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perform-iamcreateservicelinkedrole
+
+#### Resources:
+
+[Deploying Dash to AWS EBS](https://www.phillipsj.net/posts/deploying-dash-to-elastic-beanstalk)
+
+[As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
+
+### AWS Lambda
 
 Lambdas are supposed to live around 5 minutes so they don't quite fit into a Python Dashboard-style application
 where user actions are piped back to backend via websockets. There are solutions to this but the overall process in cumbersome.
-
-#### Reference links of interest:
-
-- TBD
 
 #### Gotchas:
 
@@ -42,19 +55,6 @@ where user actions are piped back to backend via websockets. There are solutions
 
 - Expose `app.server` as variable and point Zappa to it, otherwise the Dash app won't deploy.
 
-### AWS Elastic Beanstalk
-
-Resources:
-
-[Deploying Dash to AWS EBS](https://www.phillipsj.net/posts/deploying-dash-to-elastic-beanstalk)
-
-[As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
-
-#### Gotchas:
-
-https://docs.aws.amazon.com/en_us/elasticloadbalancing/latest/userguide/elb-api-permissions.html
-
-https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perform-iamcreateservicelinkedrole
 
 ### AWS Orchestration
 
@@ -63,3 +63,6 @@ Using custom domain (Route53) with AWS Lambda is a bit tricky and [requires conf
 # Other
 
 https://github.com/anaibol/awesome-serverless
+
+[Grand scheme app](http://jmdaignan.com/2018/02/26/metricsdash/)
+
