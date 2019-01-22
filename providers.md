@@ -22,7 +22,6 @@ AWSLambdaFullAccess
 
 ```
 
-
 Apart from that, add the following custom permission set:
 
 ```
@@ -31,28 +30,43 @@ Apart from that, add the following custom permission set:
     "Statement": [
         {
             "Effect": "Allow",
+            "Action": "iam:CreateServiceLinkedRole",
+            "Resource": "arn:aws:iam::*:role/aws-service-role/*"
+        },
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "elasticloadbalancing:*",
+            "Resource": "*"
+        },
+
+        {
+            "Effect": "Allow",
             "Action": [
                 "iam:AttachRolePolicy",
                 "iam:CreateRole",
                 "iam:GetRole",
-                "iam:PutRolePolicy"
+                "iam:PutRolePolicy",
+                "iam:PassRole"
             ],
             "Resource": [
                 "*"
             ]
         },
         {
+            "Sid": "Stmt1467321765000",
             "Effect": "Allow",
             "Action": [
-                "iam:PassRole"
+                "apigateway:*"
             ],
             "Resource": [
-                "arn:aws:iam::<account_id>:role/*-ZappaLambdaExecutionRole"
+                "*"
             ]
-        },
+        },        
         {
             "Effect": "Allow",
             "Action": [
+                "ec2:DescribeAccountAttributes",
                 "apigateway:DELETE",
                 "apigateway:GET",
                 "apigateway:PATCH",
@@ -87,23 +101,7 @@ Apart from that, add the following custom permission set:
                 "route53:ChangeResourceRecordSets",
                 "route53:GetHostedZone",
                 "s3:CreateBucket",
-            ],
-            "Resource": [
-                "*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:ListBucket"
-            ],
-            "Resource": [
-                "arn:aws:s3:::<bucket name from zappa_settings.json>"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
+                "s3:ListBucket",
                 "s3:DeleteObject",
                 "s3:GetObject",
                 "s3:PutObject",
@@ -113,9 +111,21 @@ Apart from that, add the following custom permission set:
                 "s3:ListBucketMultipartUploads"
             ],
             "Resource": [
-                "arn:aws:s3:::<bucket name from zappa_settings.json>/*"
+                "*"
             ]
         }
     ]
 }
 ```
+
+After you're done downloading credentials.csv, copy key and secret to `~/.env/credentials` and `~/.env/config`. They are going to look like this:
+
+```
+[profile eb-cli]
+aws_access_key_id = AKIAJ6P5JIKQOV7DINYA
+aws_secret_access_key = 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
+
+[default]
+region = us-east-1
+```
+
