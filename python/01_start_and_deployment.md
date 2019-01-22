@@ -55,6 +55,9 @@ where user actions are piped back to backend via websockets. There are solutions
 
 - Expose `app.server` as variable and point Zappa to it, otherwise the Dash app won't deploy.
 
+#### Resources:
+
+[Serverless Uptime Monitor on Flask](https://hackernoon.com/creating-a-serverless-uptime-monitor-getting-alerted-by-sms-lambda-zappa-python-flask-15c5fb31027)
 
 ### AWS Orchestration
 
