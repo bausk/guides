@@ -129,3 +129,4 @@ aws_secret_access_key = sV06IKjXWHRlRYJWuuLjW9neRJtGx8pCi6eHWA6P
 region = us-east-1
 ```
 
+Now you should be able to deploy stuff to AWS EBS and Lambda using command line tools `eb` and `zappa`. You might want to return to the Python tutorials to read about deployment options and try them out.
