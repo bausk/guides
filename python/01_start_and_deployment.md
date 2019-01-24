@@ -23,14 +23,20 @@ After you're finished setting up Amazon IAM and setting up the project, you're g
 
 ### AWS Elastic Beanstalk
 
-This initializes a new Python 3.6 app in your folder, creates a `development` environment and deploys your app with entrypoint defined in `.ebextensions` of the sample repo, and opens the site:
+Let's checkout a basic version of our sample app that uses only Dash/Flask. The following initializes a new Python 3.6 app in your folder, creates a `development` environment and deploys your app with entrypoint defined in `.ebextensions` of the sample repo, and opens the site:
 
 ```
-eb init -p python-3.6 APPNAME --region eu-west-1
+git checkout tags/v1.0-basic
+eb init -p python-3.6 APPNAME --region us-east-1
 eb create development
 eb open
 ```
 
+#### Config files relevant at this stage
+
+In the sample app, folder `.ebextensions/` contains EBS configuration. To execute the basic deployment, the following configuration files are used:
+
+`development.config` -- specifies application entry point and static paths for html/css/images content.
 
 #### Gotchas:
 
@@ -43,6 +49,23 @@ https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perfor
 [Deploying Dash to AWS EBS](https://www.phillipsj.net/posts/deploying-dash-to-elastic-beanstalk)
 
 [As single container Docker to get Python 3.6](https://docs.aws.amazon.com/en_us/elasticbeanstalk/latest/dg/single-container-docker.html)
+
+### Setting Up Dependencies on EBS
+
+#### Setting Up Google Sheets Integration
+
+#### Setting Up Redis for Caching and Storing Session Data
+
+For local development, it will suffice to use a local Docker container. Let's spin up a container on default port and find out its IP:
+
+```
+docker run --name redis -p 6379:6379 -d redis:alpine
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' redis
+```
+
+Reference document: https://gist.github.com/bahmutov/f09b5895f5bb0f2a13f5
+
+For EBS deployment, use
 
 ### AWS Lambda
 
