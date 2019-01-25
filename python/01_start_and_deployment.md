@@ -65,7 +65,33 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' red
 
 Reference document: https://gist.github.com/bahmutov/f09b5895f5bb0f2a13f5
 
-For EBS deployment, use
+For EBS deployment, checkout the Redis-enabled version:
+
+```
+git checkout tags/v1.1-redis
+```
+
+We're going to use the Amazon's managed implementation, Elasticache. Three config files were added to support Elasticache/Redis on EBS. Two are from standard AWS docs:
+
+`elasticache.config` -- Specifies the security group for Elasticache, whatever that stuff means,
+
+`options.config` -- Specifies settings for the Redis machine.
+
+Now we need to add config file that will provide an environment variable with the Redis endpoint. Finding out the endpoint cannot be described by code, unfortunately. You need to `eb deploy` before you actually start using Redis because there is no instance set up yet so there is no endpoint to specify. After you deploy, run this command to find out the Redis endpoint:
+
+```
+ aws elasticache describe-cache-clusters --show-cache-node-info
+```
+
+In the resulting JSON, the URL is filed under CacheClusters.CacheNodes.Endpoint.Address. Add it to the third config file, say `redis.config`, which should read like this:
+
+```
+option_settings:
+  - option_name: REDIS_HOST
+    value: redis-cluster.ameaqx.0001.use1.cache.amazonaws.com:6379
+```
+
+Now the cloud deployment will be able to find the Redis server.
 
 ### AWS Lambda
 
