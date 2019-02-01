@@ -40,11 +40,8 @@ gcloud iam service-accounts keys create --iam-account ACCOUNTEMAIL googlekey.jso
 
 Now you can authenticate `gspread` and `oauth2` to access a document that's exposed to anyone with the link or to the specific user with email `ACCOUNTEMAIL`. In the sample app, we do it the following way.
 
-For development, `googlekey.json` 
+For development environment, put your `googlekey.json` into `./credentials/googlekey.json`. For any production environment, you'll need a way to put `googlekey.json` contents into an environment variable.
 
-```
-
-```
 
 ### Sources and Further Reading
 
@@ -52,4 +49,3 @@ https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-sp
 
 http://jmdaignan.com/2018/02/26/metricsdash/
 
-## Considerations for Production
