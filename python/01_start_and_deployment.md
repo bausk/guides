@@ -52,7 +52,23 @@ https://stackoverflow.com/questions/51597410/aws-eks-is-not-authorized-to-perfor
 
 ### Setting Up Dependencies on EBS
 
+Now that we have the barebone app running, we can learn how to gradually add functionality. Our milestone at this point is being able to get data from a third party source into our app and saving the retrieved data and calculations between user requests. In order to do so, we're going to connect our Dash app to a Google Sheet to extract data, and then connect a Redis in-memory store to be able to both cache requests and save user's data between requests.
+
 #### Setting Up Google Sheets Integration
+
+First let's do the easier integration with Google Sheets that requires only setting up Google credentials and doesn't require provisioning any services of our own.
+
+1. Set up Google Sheets as described in the integration guide.
+
+2. As a result, you should now have googlekey.json file in ./credentials folder.
+
+3. Now checkout the Google Sheets-enabled version of the code:
+
+```
+git checkout tags/v.1.1-gspread
+```
+
+4. Running the credentials generation script will create `./.ebextensions/secrets.config` prepared for production.
 
 #### Setting Up Redis for Caching and Storing Session Data
 
