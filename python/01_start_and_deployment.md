@@ -117,7 +117,18 @@ option_settings:
 
 Now the cloud deployment will be able to find the Redis server.
 
-#### 
+#### Setting Up Scripts
+
+We can easily get data about the redis host and other environment into the config files using a couple of scripts.
+
+`scripts/generate_ebs.py` will write two production files into `.ebextensions` folder:
+
+- `redis.config` with Redis connection data, as we did manually above,
+- `gsheets.config` with Google authentication.
+
+`scripts/generate_vars.py` will write secrets.config into `.ebextensions` folder with variables specified in `credentials/variables.production.json` if run standalone. It also defines a `write_development` function that we can call on startup to generate any variables emulating EBS config for local development.
+
+`scripts/deploy_ebs.sh` will simply run the two previously defined scripts in sequence and then try to deploy to EBS.
 
 ### AWS Lambda
 
