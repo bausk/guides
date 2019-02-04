@@ -58,7 +58,7 @@ Now that we have the barebone app running, we can learn how to gradually add fun
 
 First let's do the easier integration with Google Sheets that requires only setting up Google credentials and doesn't require provisioning any services of our own.
 
-1. Set up Google Sheets as described in the integration guide.
+1. Set up [Google Sheets as described in the integration guide](./02_consuming_data.md).
 
 2. As a result, you should now have googlekey.json file in ./credentials folder.
 
@@ -68,7 +68,15 @@ First let's do the easier integration with Google Sheets that requires only sett
 git checkout tags/v.1.1-gspread
 ```
 
-4. Running the credentials generation script will create `./.ebextensions/secrets.config` prepared for production.
+4. Running the credentials generation script will create `./.ebextensions/gsheets.config` prepared for production. Now you can deploy:
+
+```
+pipenv shell
+python scripts/generate-ebs.py
+eb deploy development
+```
+
+Now the application is going to have access to Google Sheets keys and will show data from a Google Sheet . For further reading on integration of Google Sheets, read about the `gspread` [package]().
 
 #### Setting Up Redis for Caching and Storing Session Data
 
@@ -108,6 +116,8 @@ option_settings:
 ```
 
 Now the cloud deployment will be able to find the Redis server.
+
+#### 
 
 ### AWS Lambda
 
