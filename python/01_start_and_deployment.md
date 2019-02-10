@@ -130,28 +130,6 @@ We can easily get data about the redis host and other environment into the confi
 
 `scripts/deploy_ebs.sh` will simply run the two previously defined scripts in sequence and then try to deploy to EBS.
 
-### AWS Lambda
+### Next Chapter
 
-Lambdas are supposed to live around 5 minutes so they don't quite fit into a Python Dashboard-style application
-where user actions are piped back to backend via websockets. There are solutions to this but the overall process in cumbersome.
-
-#### Gotchas:
-
-- Add prefix to be able to serve static files to the corresponding environments.
-
-- Expose `app.server` as variable and point Zappa to it, otherwise the Dash app won't deploy.
-
-#### Resources:
-
-[Serverless Uptime Monitor on Flask](https://hackernoon.com/creating-a-serverless-uptime-monitor-getting-alerted-by-sms-lambda-zappa-python-flask-15c5fb31027)
-
-### AWS Orchestration
-
-Using custom domain (Route53) with AWS Lambda is a bit tricky and [requires configuring CloudFront](https://medium.com/99xtechnology/full-stack-serverless-web-apps-with-aws-189d87da024a). Django has a [walkthrough](https://edgarroman.github.io/zappa-django-guide/walk_static/) dedicated to this topic.
-
-# Other
-
-https://github.com/anaibol/awesome-serverless
-
-[Grand scheme app](http://jmdaignan.com/2018/02/26/metricsdash/)
-
+[Deploying to AWS Lambda](03_awslambda.md)
