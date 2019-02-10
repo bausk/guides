@@ -9,9 +9,19 @@ where user actions are piped back to backend via websockets. There are solutions
 
 Let's continue with the repo from previous chapter. Zappa should be installed, otherwise run `pipenv install`. You should have the command `zappa` available to you.
 
-Let's start a Zappa app. Delete the zappa_settings.json if it exists.
+Let's start a Zappa app. Delete the zappa_settings.json if it exists, and generate a new one with the command:
 
 `zappa init`
+
+Our entry point is currently `application.application`. Add the following settings to `zappa_settings.json`:
+
+```
+        "debug": true,
+        "slim_handler": true,
+        "keep_warm": false,
+```
+
+
 
 #### Gotchas:
 
