@@ -8,6 +8,8 @@ Install Serverless and dependencies:
 
 ```
 npm install -g serverless
+npm init -f
+npm install --save-dev serverless-wsgi serverless-python-requirements
 ```
 
 ### 
