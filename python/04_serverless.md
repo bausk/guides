@@ -2,7 +2,7 @@
 
 ### Prerequisites
 
-You should have the setup from [01_python.md](Python Tutorial).
+You should have the setup from [Python Tutorial](01_start_and_deployment.md).
 
 Install Serverless and dependencies:
 
