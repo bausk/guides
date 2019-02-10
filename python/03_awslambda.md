@@ -21,7 +21,15 @@ Our entry point is currently `application.application`. Add the following settin
         "keep_warm": false,
 ```
 
+Now we can deploy after generating environment variables into the settings file:
 
+```
+pipenv shell
+python scripts/generate_vars.py
+zappa deploy
+```
+
+This command sequence is also available as `deploy_lambda.sh` script.
 
 #### Gotchas:
 
