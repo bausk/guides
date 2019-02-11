@@ -63,3 +63,12 @@ functions:
 This example config is mostly derived from the tutorial above and [another example for Plotly](https://github.com/nafeger/serverless-plotly-example/blob/master/serverless.yml).
 
 If you're getting bucket/role problems, manually delete the stack in [CloudWatch](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks?filter=active), rename the service, and redeploy.
+
+### Adding a Domain Name
+
+
+### Deploying Plotly Dash
+
+### Adding Database and Authentication
+
+### Adding Secrets
