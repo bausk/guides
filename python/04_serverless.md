@@ -80,8 +80,22 @@ The current `v1.3-lambda` deploy script is `scripts/generate_vars.py` only, and 
 
 You should obtain values for these variables by provisioning a separate cloud Redis instance, for example at https://redislabs.com.
 
-### Adding a Domain Name
+### Adding a Custom Domain Name
 
+(Disclaimer: along with Redis, this is the part where the limitations and rituals around AWS Lambda are starting to outweigh its benefits; this also teches a good rule of thumb about when NOT to use Lambdas: repackaging a 'normal' web application for Lambda is generally not a very good idea.)
+
+To make the deployed Lambda a fully functional website with an address, we use this [tutorial](https://medium.com/@yhjor/setup-your-aws-api-gateway-with-custom-domain-in-7-steps-86dd32d968a1) to add a custom domain name.
+
+Disclaimer. Adding a custom, non-Route 53 managed domain name to a Lambda function is an unmitigated disaster. Main takeaways:
+
+1. `certbot` is unusable in the case of AWS Lambda, use `acme` by Google.
+
+2. `.cer` format is equivalent to `der` SSL certificate storage format. To convert the `cer` file downloaded from acme link after you complete the guide above, use the following command on each of the certificates in the chain (they are exportable right when viewing them in the Windows Explorer):
+
+```
+ openssl x509 -inform der -in cert.cer -out cert.pem
+```
 
 ### Adding Database and Authentication
 
+No. Just no.
