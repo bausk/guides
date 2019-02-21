@@ -28,6 +28,12 @@ All Python tutorials have the [onilapp example application](https://github.com/b
 
 - [Static Deploys](python/05_staticdeploys.md)
 
+### JAMStack
+
+After I was done with building an MVP with Dash in Python, I tried to split up the app components into a JAMStack architecture. The notes documenting this start here.
+
+- [JAMStack Intro](jamstack/01_intro.md)
+
 ### Containerization
 
 - [How Do I... in Docker](containers/docker.md)
