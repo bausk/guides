@@ -17,7 +17,7 @@ npm install --save-dev serverless-wsgi serverless-python-requirements
 Checkout the AWS Lambda version:
 
 ```
-git checkout -t v1.3-lambda
+git checkout -t v1.3-sls
 ```
 
 In this version, take a look at how the environment variables are passed through to `serverless.yml`.
@@ -96,6 +96,6 @@ Disclaimer. Adding a custom, non-Route 53 managed domain name to a Lambda functi
  openssl x509 -inform der -in cert.cer -out cert.pem
 ```
 
-### Adding Database and Authentication
+### Moving Forward
 
-No. Just no.
+At this point it became obvious for me that continuing to develop a Flask-based Lambda deployment is not optimal. In the next series, named [JAMstack](../jamstack), I'm going to try converting the Dash app we put together as MVP in this tutorial into a JAMStack-based application split up into services, trying an exciting new set of technologies.
