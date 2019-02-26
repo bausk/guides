@@ -18,4 +18,4 @@ a sound framework. My business requirements, having the MVP version on my hands,
 My first reflex is to use create-react-app but I'm considering trying out next.js. The previous experience with Gatsby was very pleasant
 so I'm including it in this tutorial but I'm currently not sure if Gatsby is the right choice for what is obviously an app, not a site.
 
-Let's get to it. The next part is [Setting Up a React Framework](02_frontend.md) so that we can migrate from Dash to plain Plotly.js.
+Let's get to it. The next part is [Setup and Structure Decisions](02_setup.md). I thought I could go straight to migrating from Dash to plain Plotly.js but after giving it some thought, I understood that some important decisions about how to structure your code needed to be made.
