@@ -21,15 +21,27 @@ If you're not interested in which code in the old app survives the migration to 
 
 We start with an existing app deployed on either AWS Lambda or EBS. These are some issues I considered. I'll spare the details so here's a digest of choices I would consider optimal for a small-to-medium project.
 
-- Q: If I'm going to break up my project into a separate frontend and backend, how should I structure my files?
+- Q: Should I continue developing by editing the current monolithic repository or start from scratch and move code from the old repo as I go along?
 
-- A: 
-- Should I continue developing by editing the current monolithic repository or start from scratch and move code from the old repo as I go along?
+A: I chose to start from scratch because only certain functions will remain from current MVP.
 
-Since I got some errors with Next.js, I provisioned a new certificate for another subdomain and removed the 'create Route53 record' option for `sls`, and it worked like a charm.
+- Q: How services and API endpoints should be structured?
 
-Checkout the `v1.4-frontend` tag from our repo.
+A: This has several answers. Having one service seems clumsy; with separate `serverless.yml` files we can deploy frontend and backend changes separately which is probably what we would want to do on a serious production-grade project.
 
-The reference document for now is [Crash Course on SSR with Next.js and AWS Lambda](https://dev.to/adnanrahic/a-crash-course-on-serverless-side-rendering-with-reactjs-nextjs-and-aws-lambda-13ed).
+### Setting Up
+
+For now, let's just build two separate services, one for the frontend and one for the app. We'll deal with app structure later.
+
+#### Setting Up - Frontend
+
+Checkout the `v1.0` tag from the sample app repo to proceed.
+
+Next.js allowed me to hit the ground running with the frontend so I'm going to go through with it. The reference document for the start was [Crash Course on SSR with Next.js and AWS Lambda](https://dev.to/adnanrahic/a-crash-course-on-serverless-side-rendering-with-reactjs-nextjs-and-aws-lambda-13ed).
+
+
+I provisioned a new certificate for another subdomain and removed the 'create Route53 record' option for `sls`, and it worked like a charm.
+
+
 
 https://auth0.com/docs/flows/concepts/single-page-login-flow
