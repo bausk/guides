@@ -21,10 +21,16 @@ dokku apps:create APPNAME
 dokku docker-options:add APPNAME build '--build-arg env=production'
 ```
 
+2. Add monorepo plugin if using monorepo:
+
+```
+sudo dokku plugin:install https://gitlab.com/notpushkin/dokku-monorepo
+```
+
 3. Locally, add the dokku upstream:
 
 ```
-git remote add dokku dokku@YOURDOMAIN.TLD:APPNAME
+git remote add APPNAME dokku@YOURDOMAIN.TLD:APPNAME
 git push dokku master
 ```
 
