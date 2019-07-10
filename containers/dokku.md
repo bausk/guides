@@ -21,4 +21,11 @@ dokku apps:create APPNAME
 dokku docker-options:add APPNAME build '--build-arg env=production'
 ```
 
+3. Locally, add the dokku upstream:
+
+```
+git remote add dokku dokku@YOURDOMAIN.TLD:APPNAME
+git push dokku master
+```
+
 3. Add https as described in Routing and Domains
