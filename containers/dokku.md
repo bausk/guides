@@ -9,3 +9,16 @@
 2. `dokku config:set --no-restart someapp DOKKU_LETSENCRYPT_EMAIL=jonathan@example.com`
 
 3. `dokku letsencrypt someapp`
+
+### Deploying a Dockerfile-based app
+
+1. Start with a [clean dokku install](http://dokku.viewdocs.io/dokku/getting-started/installation/).
+
+2. Set up new app and docker options for build:
+
+```
+dokku apps:create APPNAME
+dokku docker-options:add APPNAME build '--build-arg env=production'
+```
+
+3. Add https as described in Routing and Domains
