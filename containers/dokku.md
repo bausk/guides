@@ -35,3 +35,15 @@ git push dokku master
 ```
 
 3. Add https as described in Routing and Domains
+
+### Other Gotchas
+
+- Deploy from monorepo:
+
+```
+sudo dokku plugin:install https://gitlab.com/notpushkin/dokku-monorepo
+
+# In .dokku-monorepo
+appname1=path/to/source1
+appname2=path/to/source2
+```
