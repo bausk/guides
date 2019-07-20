@@ -31,7 +31,7 @@ sudo dokku plugin:install https://gitlab.com/notpushkin/dokku-monorepo
 
 ```
 git remote add APPNAME dokku@YOURDOMAIN.TLD:APPNAME
-git push dokku master
+git push APPNAME master
 ```
 
 3. Add https as described in Routing and Domains
