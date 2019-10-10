@@ -9,6 +9,7 @@ grep -rl "safetyenv" /etc 2>/dev/null | xargs cat # recursive grep with content 
 find . -name "*uwsgi*"
 ps -aux
 ps -feww
+ls -al
 ```
 
 ### Network and ssh cheatsheet
