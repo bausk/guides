@@ -1,6 +1,26 @@
-# Lessons Learned on Using Shell in Windows
+# Shell Productivity on Windows
 
 Tooling in use: Windows 10, `cmder`, git-for-windows bash.
+
+### Basic commanline operations
+
+```
+grep -rl "safetyenv" /etc 2>/dev/null | xargs cat # recursive grep with content show and silenced errors
+find . -name "*uwsgi*"
+ps -aux
+ps -feww
+```
+
+### Network and ssh cheatsheet
+
+`ssh -R 80:localhost:8000 serveo.net`
+
+### Docker quicklaunches
+
+`docker run --rm --name pg-docker2 -e POSTGRES_PASSWORD=docker2 -d -p 5433:5432 -v //d/docker:/var/lib/postgresql/data postgres`
+
+`docker run --rm -p 10000:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/minimal-notebook`
+
 
 ### Integration Gotchas
 
